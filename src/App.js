@@ -3,8 +3,14 @@ import './App.css';
 import {connect} from 'react-redux'
 import LoginComponent from './components/LoginComponentt'
 import SignUpComponent from './components/SignUpComponent'
+import {autoLogin} from './actions/userActions'
 
 class App extends React.Component{
+
+  componentDidMount(){
+    this.props.autoLogin()
+  }
+
   render(){
     return (
       <div className="App">
@@ -25,4 +31,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    autoLogin: () => dispatch(autoLogin())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
