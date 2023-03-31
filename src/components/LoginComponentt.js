@@ -10,6 +10,7 @@ class LoginComponent extends React.Component {
 
     handleOnChange = (e) => {
         e.persist();
+        console.log(e.target.valu, "11111111111");
         this.setState(() => ({
             [e.target.name]: e.target.value 
         }))
