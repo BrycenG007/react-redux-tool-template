@@ -17,7 +17,9 @@ class LoginComponent extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault()
+        console.log("check data");
         this.props.fetchUser(this.state)
+
     }
 
     render(){
